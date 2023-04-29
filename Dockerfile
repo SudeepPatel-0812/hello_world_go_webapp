@@ -1,12 +1,14 @@
-# Dockerfile
-FROM golang:1.20-alpine
+FROM golang:latest
+
+RUN go install github.com/cosmtrek/air@latest
 
 WORKDIR /app
 
+COPY go.mod .
+COPY go.sum .
+
+RUN go mod download
+
 COPY . .
 
-RUN go build -o /app/bin/hello_world ./cmd/hello_world
-
-EXPOSE 8080
-
-ENTRYPOINT ["/app/bin/hello_world"]
+ENTRYPOINT ["air"]

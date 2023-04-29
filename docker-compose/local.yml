@@ -1,9 +1,0 @@
-# docker-compose.yml
-version: '3.8'
-
-services:
-  hello_world:
-    build: 
-      context: ../
-    ports:
-      - "8080:8080"

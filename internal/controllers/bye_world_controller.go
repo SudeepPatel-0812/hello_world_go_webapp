@@ -6,5 +6,5 @@ import (
 )
 
 func ByeWorldController(w http.ResponseWriter, _ *http.Request) {
-	fmt.Fprintf(w, "Bye World")
+	fmt.Fprintf(w, "Bye World! Yes it is indeed working")
 }
