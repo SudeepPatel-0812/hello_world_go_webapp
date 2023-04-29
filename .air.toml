@@ -1,4 +1,3 @@
-
 # Working directory
 # . or absolute path, please note that the directories following must be under root.
 root = "."
@@ -6,9 +5,9 @@ tmp_dir = "tmp"
 
 [build]
 # Just plain old shell command. You could use `make` as well.
-cmd = "go build -o ./tmp/hello_world /app/cmd/hello_world"
+cmd = "go build -o ./tmp/hello_world ./cmd/hello_world"
 # Binary file yields from `cmd`.
-bin = "tmp/main"
+bin = "tmp/hello_world"
 # Customize binary.
 full_bin = "APP_ENV=dev APP_USER=air ./tmp/hello_world"
 # Watch these filename extensions.
@@ -24,7 +23,7 @@ delay = 1000 # ms
 # Stop to run old binary when build errors occur.
 stop_on_error = true
 # This log file places in your tmp_dir.
-log = "air_errors.log"
+log = "/tmp/build-errors.log"
 
 [log]
 # Show log time
